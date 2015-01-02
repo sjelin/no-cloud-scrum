@@ -1,0 +1,17 @@
+<h1>{{epoch}}: <input class="brief" type="text" ng-model="story.brief" placeholder="Brief explanation"></input>
+<a ng-click="deleteStory()" class="delete" title="delete this story">&#10008;</a></h1>
+<textarea class="description" ng-model="story.description" placeholder="Full Story"></textarea>
+<textarea class="dod" ng-model="story.dod" placeholder="Definition of done"></textarea>
+<select class="time" ng-model="story.time">
+	<option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>5</option>
+	<option>8</option>
+	<option>13</option>
+	<option>21</option>
+</select>
+<select class="status" ng-model="story.status">
+	<option ng-repeat="status in statuses">{{status}}</option>
+</select>

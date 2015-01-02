@@ -1,0 +1,7 @@
+*.swp
+*.swo
+*~
+*.pyc
+.DS_Store
+.sass-cache
+scrum.css
