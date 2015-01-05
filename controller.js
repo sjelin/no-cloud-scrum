@@ -51,7 +51,7 @@ function boardCtrl($scope, title, storyStatus, epoch) {
 				return v.toString(16);
 			});
 		epoch.stories.push({id: id, status: statuses.NOT_STARTED,
-			 priority: 4, dateAdded: new Date().getTime()});
+			 priority: '4', dateAdded: new Date().getTime()});
 		$scope.goToStory(id);
 	};
 	$scope.newEpoch = function() {
@@ -110,6 +110,13 @@ scrumApp.controller('StoryCtrl', function ($scope, $routeParams, $location) {
 			statuses.IN_PROGRESS,
 			statuses.DONE
 		];
+		$scope.goBack = function() {
+			switch(story.status) {
+				case statuses.IN_PROGRESS: $location.path('/sprint'); break;
+				case statuses.DONE: $location.path('/done'); break;
+				default: $location.path('/');
+			}
+		};
 		$scope.deleteStory = function() {
 			epoch.stories = epoch.stories.filter(function(s) {
 				return s !== story;

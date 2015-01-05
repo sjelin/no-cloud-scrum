@@ -5,7 +5,7 @@
 	<a ng-click="deleteEpoch(epoch)" class="delete button" title="delete this epoch">&#10008;</a></h2>
 	<table>
 		<tbody>
-			<tr ng-repeat="story in epoch.stories | filterStories:status | orderBy:'priority'" ng-click="goToStory(story.id)">
+			<tr ng-repeat="story in epoch.stories | filterStories:status | orderBy: 'priority' " ng-click="goToStory(story.id)">
 				<td class="priority">P{{story.priority}}</td>
 				<td class="brief">{{story.brief}}</td>
 				<td class="time">({{story.time}}pts)</td>
@@ -22,3 +22,4 @@
 	<a class="new story" ng-click="newStory(epoch)">New Story</a>
 </div>
 <a class="new epoch" ng-click="newEpoch()">New Epoch</a>
+

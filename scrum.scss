@@ -46,10 +46,6 @@ div.priority, div.time, div.status {
 	border: 1px solid rgba(0,0,0,0.1);
 	padding: 0em 0.2em;
 	border-radius: 0.5em;
-	cursor: pointer;
-	-webkit-touch-callout: none;
-	user-select: none;
-	-webkit-user-select: none;
 	&.delete {
 		background: #FFAAAA;
 	}
@@ -58,6 +54,12 @@ div.priority, div.time, div.status {
 	}
 }
 
+a, .button {
+	cursor: pointer;
+	-webkit-touch-callout: none;
+	user-select: none;
+	-webkit-user-select: none;
+}
 div.epoch {
 	padding: 1em;
 	margin-bottom: 1em;
@@ -65,8 +67,20 @@ div.epoch {
 	table {
 		background: #FAFAFA;
 		width: 100%;
-		.priority {
+		td.priority {
 			color: rgba(0,0,0,0.5);
+			width: 1.2em;
+		}
+		td.time {
+			width: 3.5em;
+		}
+		td.status {
+			text-align: center;
+			width: 7em;
+		}
+		td.delete {
+			text-align: center;
+			width: 1em;
 		}
 	}
 }
