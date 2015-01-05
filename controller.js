@@ -51,7 +51,7 @@ function boardCtrl($scope, title, storyStatus, epoch) {
 				return v.toString(16);
 			});
 		epoch.stories.push({id: id, status: statuses.NOT_STARTED,
-			 dateAdded: new Date().getTime()});
+			 priority: 4, dateAdded: new Date().getTime()});
 		$scope.goToStory(id);
 	};
 	$scope.newEpoch = function() {

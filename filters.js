@@ -22,3 +22,20 @@ scrumFilters.filter('filterStories', function() {
 		return filterStories(stories, status);
 	};
 });
+
+scrumFilters.filter('shortenEpoch', function() {
+	return function(name) {
+		if(name.length < 8)
+			return name;
+		if(name.indexOf(' ') != -1)
+			return name.split(' ').map(function(word) {
+				return word[0].toUpperCase();
+			}).join('');
+		var nm = name.split('').filter(function(letter, i) {
+			return !(i && ({a:1,e:1,i:1,o:1,u:1})[letter]);
+		}).join('');
+		if(nm.length < 8)
+			return nm;
+		return name.substr(0,6)+'...';
+	};
+});

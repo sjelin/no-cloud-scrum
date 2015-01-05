@@ -1,0 +1,79 @@
+body {
+	max-width: 800px;
+	margin: auto;
+	padding: 0.5em;
+	& > div {
+		position: relative;
+	}
+}
+
+body, input, textarea {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+input, textarea, select {
+	font-size: 1em;
+}
+
+h1 > input {
+	font-size: 0.6em;
+	width: 20em;
+}
+
+textarea {
+	height: 10em;
+	width: 100%;
+	display: block;
+	margin-bottom: 1em;
+	resize: none;
+}
+
+div.priority, div.time, div.status {
+	display: inline-block;
+	position: absolute;
+	font-size: 1.2em;
+	&.time {
+		left: 4.9em;
+	}
+	&.status {
+		right: 0px;
+		text-align: right;
+	}
+}
+
+.button {
+	display: inline-block;
+	border: 1px solid rgba(0,0,0,0.1);
+	padding: 0em 0.2em;
+	border-radius: 0.5em;
+	cursor: pointer;
+	-webkit-touch-callout: none;
+	user-select: none;
+	-webkit-user-select: none;
+	&.delete {
+		background: #FFAAAA;
+	}
+	&.done {
+		background: #AAFFAA;
+	}
+}
+
+div.epoch {
+	padding: 1em;
+	margin-bottom: 1em;
+	background: #EEEEEE;
+	table {
+		background: #FAFAFA;
+		width: 100%;
+		.priority {
+			color: rgba(0,0,0,0.5);
+		}
+	}
+}
+
+
+@for $i from 0 to 20 {
+	@media (min-width: #{$i * 40}px) {
+		body { font-size: #{$i}px; }
+	}
+}

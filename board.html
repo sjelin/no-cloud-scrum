@@ -6,9 +6,9 @@
 	<table>
 		<tbody>
 			<tr ng-repeat="story in epoch.stories | filterStories:status | orderBy:'priority'" ng-click="goToStory(story.id)">
-				<td class="priority">{{story.priority}}</td>
+				<td class="priority">P{{story.priority}}</td>
 				<td class="brief">{{story.brief}}</td>
-				<td class="time">{{story.time}}</td>
+				<td class="time">({{story.time}}pts)</td>
 				<td class="status" onclick="event.stopPropagation()">
 					<select ng-model="story.status">
 						<option ng-repeat="status in statuses">{{status}}</option>
